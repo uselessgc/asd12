@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+
+  <!-- 【浏览器标签页标题】 -->
+  <title>还是自己玩按摩棒舒服</title>
+
+  <meta name="robots" content="noindex,nofollow" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* 【网页主标题：已调大一号】 */
+    h1 {
+      margin: 18px 12px 6px;
+      font-size: 26px; /* 原来是 22px */
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* 【新增：简介样式】 */
+    .desc {
+      margin: 0 14px 14px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+    }
+
+    video {
+      width: 100vw;
+      max-width: 100%;
+      height: auto;
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 【网页内主标题】 -->
+  <h1>老公不行，还是自己玩按摩棒舒服，喷水不要拿开，持续高潮太爽了</h1>
+
+  <!-- 【这里填写简介内容（可留空 / 可随时改）】 -->
+  <div class="desc">
+    40岁女人更要取悦自己，多多体验性高潮，平衡激素有利于身心健康，姐妹们一定要试试情趣玩具，真的太舒服了。
+  </div>
+
+  <!-- 【视频】 -->
+  <video
+    id="video"
+    src="./play2.mp4"
+    autoplay
+    muted
+    playsinline
+    preload="metadata"
+  ></video>
+
+  <script>
+    const v = document.getElementById('video');
+
+    function safePlay() {
+      try {
+        const p = v.play();
+        if (p && typeof p.catch === 'function') p.catch(() => {});
+      } catch (e) {}
+    }
+
+    function boot() {
+      v.muted = true;
+      v.setAttribute('muted', '');
+      v.playsInline = true;
+      v.setAttribute('playsinline', '');
+      safePlay();
+    }
+
+    document.addEventListener('DOMContentLoaded', boot);
+    v.addEventListener('canplay', safePlay);
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) safePlay();
+    });
+
+    document.addEventListener('click', () => {
+      v.muted = false;
+      v.volume = 1;
+      safePlay();
+    }, { once: true });
+
+    document.addEventListener('touchstart', () => {
+      v.muted = false;
+      v.volume = 1;
+      safePlay();
+    }, { once: true, passive: true });
+  </script>
+</body>
+</html>
